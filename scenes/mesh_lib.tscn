@@ -48,7 +48,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = ExtResource("1_70746")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bush"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0, -0.05)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.25, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5, 0, 0.5)
@@ -59,7 +59,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = ExtResource("3_4n6ek")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bush2"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0, -0.05)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.25, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Bush2/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5, 0, 0.5)
@@ -70,7 +70,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = ExtResource("5_k6t4t")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bush3"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0, -0.05)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.25, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush3/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5, 0, 0.5)
@@ -81,7 +81,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = ExtResource("4_csg1x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bush4"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0, -0.05)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.25, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush4/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5, 0, 0.5)
@@ -92,7 +92,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = ExtResource("7_a4vea")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bush5"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0, -0.05)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.25, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush5/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5, 0, 0.5)
@@ -103,7 +103,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = ExtResource("6_yrs1a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bush6"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0, -0.05)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.25, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush6/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5, 0, 0.5)
@@ -114,7 +114,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = ExtResource("1_jl0a8")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bush7"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0, -0.05)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.25, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush7/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5, 0, 0.5)
@@ -125,7 +125,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = ExtResource("2_70746")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bush8"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0, -0.05)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.25, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush8/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5, 0, 0.5)
@@ -136,7 +136,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = ExtResource("8_htdeh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bush9"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0, -0.05)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.25, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush9/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5, 0, 0.5)
@@ -147,7 +147,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = ExtResource("9_3bsxg")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Bush10"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0, -0.05)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.25, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bush10/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5, 0, 0.5)
