@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://boiw7sya0jhj8"]
+[gd_scene load_steps=8 format=3 uid="uid://boiw7sya0jhj8"]
 
 [ext_resource type="MeshLibrary" uid="uid://drwfxbjlvas3i" path="res://tres/tiles.tres" id="1_hltfv"]
 [ext_resource type="PackedScene" uid="uid://b21nam36dg0ga" path="res://scenes/player.tscn" id="2_t3x5t"]
@@ -7,6 +7,20 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3x5t"]
 size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3x5t"]
+sky_top_color = Color(0.903906, 0.871928, 0.843312, 1)
+sky_horizon_color = Color(0.878447, 0.936675, 0.968144, 1)
+ground_bottom_color = Color(0.185, 0.38975, 0.5, 1)
+ground_horizon_color = Color(0.236714, 0.763565, 0.793122, 1)
+ground_curve = 0.269086
+
+[sub_resource type="Sky" id="Sky_4iwim"]
+sky_material = SubResource("ProceduralSkyMaterial_t3x5t")
+
+[sub_resource type="Environment" id="Environment_k83q7"]
+background_mode = 2
+sky = SubResource("Sky_4iwim")
 
 [node name="garden" type="Node3D"]
 
@@ -32,3 +46,6 @@ light_energy = 0.486
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 2.75)
 shape = SubResource("BoxShape3D_t3x5t")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k83q7")
