@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Grown"
+run/main_scene="uid://boiw7sya0jhj8"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.svg"
 
@@ -21,3 +22,11 @@ GlobalFunctions="*res://global_functions.gd"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+
+[physics]
+
+jolt_physics_3d/simulation/areas_detect_static_bodies=true
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.4992, 0.71424, 0.96, 1)
