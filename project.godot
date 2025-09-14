@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 GlobalFunctions="*res://global_functions.gd"
 UiHandler="*res://ui_handler.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
