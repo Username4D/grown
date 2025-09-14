@@ -3,10 +3,12 @@ extends Control
 var moves = []
 var iterations = 0
 var current = 0
-
+var range = 0
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("inv_left") or Input.is_action_just_pressed("inv_right"):
-		moves.append(Input.get_axis( "inv_right","inv_left"))
+		if not abs(range + Input.get_axis( "inv_right","inv_left")) > 4:
+			moves.append(Input.get_axis( "inv_right","inv_left"))
+			range += Input.get_axis( "inv_right","inv_left")
 	if Input.is_action_just_pressed("1"):
 		if UiHandler.mode == "building":
 			UiHandler.mode = "watching"

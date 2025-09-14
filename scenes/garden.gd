@@ -21,7 +21,9 @@ func save():
 		Tiles.append({"pos": i, "item": $GridMap.get_cell_item(i), "orientation": $GridMap.get_cell_item_orientation(i)})
 	var gridmap = FileAccess.open("user://gridmap.txt", FileAccess.WRITE)
 	gridmap.store_var(Tiles)
-	print(Tiles)
+	var Coins = FileAccess.open("user://coins.txt", FileAccess.WRITE)
+	Coins.store_64(UiHandler.coins)
+	
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		await save()
@@ -32,3 +34,6 @@ func _ready() -> void:
 		var Tiles = gridmap.get_var()
 		for i in Tiles:
 			$GridMap.set_cell_item(i["pos"], i["item"], i["orientation"])
+	var Coins = FileAccess.open("user://coins.txt", FileAccess.READ)
+	if Coins:
+		UiHandler.coins = Coins.get_64()
