@@ -7,6 +7,16 @@ var current = 0
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("inv_left") or Input.is_action_just_pressed("inv_right"):
 		moves.append(Input.get_axis( "inv_right","inv_left"))
+	if Input.is_action_just_pressed("1"):
+		if UiHandler.mode == "building":
+			UiHandler.mode = "watching"
+		else:
+			UiHandler.mode = "building"
+	if Input.is_action_just_pressed("2"):
+		if UiHandler.mode == "deleting":
+			UiHandler.mode = "watching"
+		else:
+			UiHandler.mode = "deleting"
 	if iterations == 0 and len(moves) != 0:
 		current = moves[0]
 		moves.remove_at(0)

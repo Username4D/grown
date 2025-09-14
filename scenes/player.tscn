@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b21nam36dg0ga"]
+[gd_scene load_steps=7 format=3 uid="uid://b21nam36dg0ga"]
 
 [ext_resource type="Script" uid="uid://bgmtaj6sltyot" path="res://player.gd" id="1_3vyb7"]
 [ext_resource type="ArrayMesh" uid="uid://bvdg7q1xes7y2" path="res://images/vox/log.vox" id="2_g2els"]
@@ -8,6 +8,16 @@ size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qhqgy"]
 size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qhqgy"]
+size = Vector3(0.6, 0.6, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqkch"]
+transparency = 1
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.6, 0.18, 0.18, 0.211765)
+normal_scale = -5.65
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_3vyb7")
@@ -36,6 +46,11 @@ skeleton = NodePath("../..")
 [node name="hitbox" type="CollisionShape3D" parent="next"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0)
 shape = SubResource("BoxShape3D_qhqgy")
+
+[node name="delete" type="MeshInstance3D" parent="next"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.175, 0)
+mesh = SubResource("BoxMesh_qhqgy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqkch")
 
 [connection signal="body_entered" from="next" to="." method="_on_next_body_entered"]
 [connection signal="body_exited" from="next" to="." method="_on_next_body_exited"]

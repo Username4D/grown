@@ -14,7 +14,15 @@ func _physics_process(delta: float) -> void:
 	if current_mesh != UiHandler.inv_selection:
 		current_mesh = UiHandler.inv_selection
 		$next/ind/MeshInstance3D.mesh = meshes[UiHandler.inv_selection]
-	
+	if UiHandler.mode == "building":
+		$next/ind/MeshInstance3D.visible = true
+		$next/delete.visible = false
+	elif UiHandler.mode == "deleting":
+		$next/ind/MeshInstance3D.visible = false
+		$next/delete.visible = true
+	else:
+		$next/ind/MeshInstance3D.visible = false
+		$next/delete.visible = false
 	if Input.is_action_just_pressed("ui_rotate"):
 		$next/ind.rotate(Vector3(0,1,0), deg_to_rad(90))
 	
@@ -30,7 +38,21 @@ func _physics_process(delta: float) -> void:
 		if UiHandler.mode == "building":
 			await get_tree().physics_frame
 			if len($next.get_overlapping_bodies()) == 0:
-				self.get_parent().place((position - Vector3(0.25, 1.125, 0.25)) / 0.5 + Vector3(1,0,0).rotated(Vector3(0,1,0), $next.rotation.y) + Vector3(0,2,0))
+				var pos = (((position - Vector3(0.25, 1.125, 0.25)) * 2 + Vector3(1,0,0).rotated(Vector3(0,1,0), $next.rotation.y))) + Vector3(0,2,0)
+				pos = (Vector3i(roundi(pos.x), roundi(pos.y), roundi(pos.z)))
+				print(pos)
+				self.get_parent().place(pos)
+				await get_tree().physics_frame
+				$next.rotate(Vector3(0,1,0), deg_to_rad(360))
+		if UiHandler.mode == "deleting":
+			await get_tree().physics_frame
+			if len($next.get_overlapping_bodies()) != 0:
+				var pos = (((position - Vector3(0.25, 1.125, 0.25)) * 2 + Vector3(1,0,0).rotated(Vector3(0,1,0), $next.rotation.y))) + Vector3(0,2,0)
+				pos = (Vector3i(roundi(pos.x), roundi(pos.y), roundi(pos.z)))
+				print(pos)
+				self.get_parent().clear(pos)
+				await get_tree().physics_frame
+				$next.rotate(Vector3(0,1,0), deg_to_rad(360))
 func move():
 	if len(moves) != 0:
 		if current == Vector2.ZERO:
@@ -40,9 +62,7 @@ func move():
 				$next.rotation.y = 0
 				$next.rotate(Vector3(0,1,0), deg_to_rad(current.x * 90 - 90 if current.x != 0 else current.y *-90))
 			await get_tree().physics_frame
-			print($next.get_overlapping_bodies())
-			var ret = false if len($next.get_overlapping_bodies()) == 0 else true
-			print(object_count)
+			var ret = false if len($next.get_overlapping_bodies()) == 0 else true 
 			if not ret:
 				deltas = 0
 				last_cycle_velocity = Vector3.ZERO
