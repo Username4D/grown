@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdycwupr3v0ga"]
+
+[ext_resource type="Script" uid="uid://sddwyb3kysex" path="res://hotbar.gd" id="1_4qkdb"]
+[ext_resource type="PackedScene" uid="uid://4wnyt4w73cxd" path="res://scenes/inv_button.tscn" id="1_yj1xu"]
+
+[node name="hotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 544.0
+offset_right = 1152.0
+offset_bottom = 608.0
+script = ExtResource("1_4qkdb")
+
+[node name="Fence 5" parent="." instance=ExtResource("1_yj1xu")]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 0.0
+offset_right = 608.0
+offset_bottom = 64.0
+
+[node name="Fence 4" parent="." instance=ExtResource("1_yj1xu")]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 0.0
+offset_right = 512.0
+offset_bottom = 64.0
+
+[node name="Fence 3" parent="." instance=ExtResource("1_yj1xu")]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 0.0
+offset_right = 416.0
+offset_bottom = 64.0
+
+[node name="Fence 2" parent="." instance=ExtResource("1_yj1xu")]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 0.0
+offset_right = 320.0
+offset_bottom = 64.0
+
+[node name="Log" parent="." instance=ExtResource("1_yj1xu")]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 0.0
+offset_right = 704.0
+offset_bottom = 64.0
+
+[node name="Bush" parent="." instance=ExtResource("1_yj1xu")]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 0.0
+offset_right = 800.0
+offset_bottom = 64.0
+
+[node name="Flower" parent="." instance=ExtResource("1_yj1xu")]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 0.0
+offset_right = 896.0
+offset_bottom = 64.0
+
+[node name="Grass" parent="." instance=ExtResource("1_yj1xu")]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 0.0
+offset_right = 992.0
+offset_bottom = 64.0
+
+[node name="Fence 1" parent="." instance=ExtResource("1_yj1xu")]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 0.0
+offset_right = 224.0
+offset_bottom = 64.0

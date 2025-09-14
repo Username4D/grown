@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b21nam36dg0ga"]
+[gd_scene load_steps=5 format=3 uid="uid://b21nam36dg0ga"]
 
 [ext_resource type="Script" uid="uid://bgmtaj6sltyot" path="res://player.gd" id="1_3vyb7"]
+[ext_resource type="ArrayMesh" uid="uid://bvdg7q1xes7y2" path="res://images/vox/log.vox" id="2_g2els"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g2els"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -23,6 +24,14 @@ shape = SubResource("BoxShape3D_qhqgy")
 transform = Transform3D(0.965926, -0.225708, 0.126661, 0, 0.489382, 0.872069, -0.258819, -0.842354, 0.472707, 0.44, 4, 2)
 
 [node name="next" type="Area3D" parent="."]
+
+[node name="ind" type="Node3D" parent="next"]
+transform = Transform3D(0.5, 0, 7.50018e-08, 0, 0.5, 0, -7.50018e-08, 0, 0.5, 0.5, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="next/ind"]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, -0.08, -0.25, 0.08)
+mesh = ExtResource("2_g2els")
+skeleton = NodePath("../..")
 
 [node name="hitbox" type="CollisionShape3D" parent="next"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0, 0)

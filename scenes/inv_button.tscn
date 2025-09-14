@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://4wnyt4w73cxd"]
+
+[ext_resource type="Script" uid="uid://i102vgm48kd7" path="res://inv_button.gd" id="1_4mh7f"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(1, 1, 1, 0.239216)
+script = ExtResource("1_4mh7f")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "log"
+horizontal_alignment = 1
+vertical_alignment = 1
