@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_down"):
 		moves.append(Vector2(0, 1))
 	if Input.is_action_just_pressed("ui_place") and len(moves) == 0 and current == Vector2.ZERO:
-		if UiHandler.mode == "building":
+		if UiHandler.mode == "building" and UiHandler.coins >= 1:
 			await get_tree().physics_frame
 			if len($next.get_overlapping_bodies()) == 0:
 				var pos = (((position - Vector3(0.25, 1.125, 0.25)) * 2 + Vector3(1,0,0).rotated(Vector3(0,1,0), $next.rotation.y))) + Vector3(0,2,0)
@@ -44,6 +44,10 @@ func _physics_process(delta: float) -> void:
 				self.get_parent().place(pos, $next.rotation.y + $next/ind.rotation.y)
 				await get_tree().physics_frame
 				$next.rotate(Vector3(0,1,0), deg_to_rad(360))
+				UiHandler.coins -= 1
+		else:
+			if UiHandler.mode == "building":
+				self.get_parent().broke()
 		if UiHandler.mode == "deleting":
 			await get_tree().physics_frame
 			if len($next.get_overlapping_bodies()) != 0:
