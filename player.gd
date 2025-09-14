@@ -26,7 +26,11 @@ func _physics_process(delta: float) -> void:
 		moves.append(Vector2(0, -1))
 	if Input.is_action_just_pressed("ui_down"):
 		moves.append(Vector2(0, 1))
-
+	if Input.is_action_just_pressed("ui_place") and len(moves) == 0 and current == Vector2.ZERO:
+		if UiHandler.mode == "building":
+			await get_tree().physics_frame
+			if len($next.get_overlapping_bodies()) == 0:
+				self.get_parent().place((position - Vector3(0.25, 1.125, 0.25)) / 0.5 + Vector3(1,0,0).rotated(Vector3(0,1,0), $next.rotation.y) + Vector3(0,2,0))
 func move():
 	if len(moves) != 0:
 		if current == Vector2.ZERO:

@@ -6,7 +6,7 @@ var current = 0
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("inv_left") or Input.is_action_just_pressed("inv_right"):
-		moves.append(Input.get_axis("inv_left", "inv_right"))
+		moves.append(Input.get_axis( "inv_right","inv_left"))
 	if iterations == 0 and len(moves) != 0:
 		current = moves[0]
 		moves.remove_at(0)

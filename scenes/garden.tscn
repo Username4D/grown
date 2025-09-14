@@ -1,13 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://boiw7sya0jhj8"]
 
 [ext_resource type="MeshLibrary" uid="uid://drwfxbjlvas3i" path="res://tiles.tres" id="1_hltfv"]
+[ext_resource type="Script" uid="uid://blvb847axvmat" path="res://scenes/garden.gd" id="1_k83q7"]
 [ext_resource type="PackedScene" uid="uid://b21nam36dg0ga" path="res://scenes/player.tscn" id="2_t3x5t"]
 [ext_resource type="PackedScene" uid="uid://cdycwupr3v0ga" path="res://scenes/hotbar.tscn" id="3_4iwim"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t3x5t"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_t3x5t"]
-size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t3x5t"]
 sky_top_color = Color(0.903906, 0.871928, 0.843312, 1)
@@ -26,6 +24,7 @@ fog_light_color = Color(1, 1, 1, 1)
 fog_light_energy = 0.0
 
 [node name="garden" type="Node3D"]
+script = ExtResource("1_k83q7")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_hltfv")
@@ -43,12 +42,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1.125, 0.25)
 transform = Transform3D(0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, -6, 6, 6)
 light_color = Color(1, 0.55, 0, 1)
 light_energy = 0.486
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 1, 2.75)
-shape = SubResource("BoxShape3D_t3x5t")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k83q7")
