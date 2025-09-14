@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 				var pos = (((position - Vector3(0.25, 1.125, 0.25)) * 2 + Vector3(1,0,0).rotated(Vector3(0,1,0), $next.rotation.y))) + Vector3(0,2,0)
 				pos = (Vector3i(roundi(pos.x), roundi(pos.y), roundi(pos.z)))
 				print(pos)
-				self.get_parent().place(pos)
+				self.get_parent().place(pos, $next.rotation.y + $next/ind.rotation.y)
 				await get_tree().physics_frame
 				$next.rotate(Vector3(0,1,0), deg_to_rad(360))
 		if UiHandler.mode == "deleting":
