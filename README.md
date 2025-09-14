@@ -1,8 +1,8 @@
-#Grown
+# Grown
 
 Make your tasks more entertaining by growing a garden in the background. You get Coins every minute to place blocks in your garden 
 
-##Controls: 
+## Controls: 
     Move: WASD or arrow-keys 
     Hotbar: Q/E
     Build-mode: 1 
@@ -10,5 +10,5 @@ Make your tasks more entertaining by growing a garden in the background. You get
     Use: Space 
     Rotate: R
 
-##Play:
+## Play:
     username4d.github.io
